@@ -13,5 +13,18 @@
     <ion-item *ngFor="let item of items" (click)="itemSelected(item)">{{item.name}}</ion-item>
   </ion-list>
 
-  <button ion-button (click)="myButton($event)">내 버튼</button>
+  <ion-list>
+    <ion-item>
+      <ion-label>사용자 이름:</ion-label>
+      <ion-input type="text" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>입력한 값 출력:</ion-label>
+      <ion-label>{{userName}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!--<button ion-button full (click)="myButton($event)">내 버튼</button>-->
+  <button ion-button full [disabled]="disableSwitch"
+          (click)="myButton($event)">내 버튼</button>
 </ion-content>

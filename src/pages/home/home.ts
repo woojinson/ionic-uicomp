@@ -14,6 +14,8 @@ export class HomePage {
     {"id":3, name:"세번째 Item"},
   ];
 
+  disableSwitch=false;
+
   itemSelected(item){
     alert(item.id);
   }
