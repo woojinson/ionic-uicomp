@@ -20,8 +20,14 @@ export class HomePage {
     alert(item.id);
   }
   myButton(event){
-    alert(event.target.textContent)
-    console.log(event.target.textContent + ","+ event.clientX + ","+event.clientY);
+    if(typeof this.userName !== "undefined"){
+      //alert(event.target.textContent)
+      console.log(event.target.textContent + ","+ event.clientX + ","+event.clientY);
+      this.navCtrl.push('bindPage', {name:this.userName});
+    }else{
+      alert('userName 을 입력하세요.')
+    }
+
   }
 
   constructor(public navCtrl: NavController) {//생성자 = 객체 생성시 잴 먼져 호출됨
