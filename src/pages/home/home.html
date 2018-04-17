@@ -12,4 +12,6 @@
   <ion-list>
     <ion-item *ngFor="let item of items" (click)="itemSelected(item)">{{item.name}}</ion-item>
   </ion-list>
+
+  <button ion-button (click)="myButton($event)">내 버튼</button>
 </ion-content>

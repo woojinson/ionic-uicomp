@@ -17,10 +17,9 @@ export class HomePage {
   itemSelected(item){
     alert(item.id);
   }
-
-  clickButton(event){
+  myButton(event){
     alert(event.target.textContent)
-    console.log(event.clientX + ","+event.clientY);
+    console.log(event.target.textContent + ","+ event.clientX + ","+event.clientY);
   }
 
   constructor(public navCtrl: NavController) {//생성자 = 객체 생성시 잴 먼져 호출됨
