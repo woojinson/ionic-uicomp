@@ -25,7 +25,7 @@ export class HomePage {
       console.log(event.target.textContent + ","+ event.clientX + ","+event.clientY);
       this.navCtrl.push('bindPage', {name:this.userName});
     }else{
-      alert('userName 을 입력하세요.')
+      alert('userName 을 입력하세요.');
     }
 
   }
