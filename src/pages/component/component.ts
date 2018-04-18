@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
   ActionSheetController, AlertController, IonicPage, ModalController, NavController, NavParams,
-  Platform
+  Platform, ToastController
 } from 'ionic-angular';
 import {ModalPage} from "../modal/modal";
 import {AccountInterface} from "../../interfaces/account";
@@ -26,6 +26,7 @@ export class ComponentPage {
               public actionsheetCtrl : ActionSheetController,
               public modalCtrl:ModalController,
               public alertCtrl:AlertController,
+              public toastCtrl: ToastController,
               public platform:Platform,
               public navParams: NavParams) {
   }
@@ -114,5 +115,18 @@ export class ComponentPage {
     prompt.present();
     console.log(this.accountData);
   }
+
+  toast() {
+    let toast = this.toastCtrl.create({
+      message: '3초동안보였다가사라집니다.',
+      duration: 3000,
+      position : 'top',
+      showCloseButton:true,
+      closeButtonText: 'OK'
+    });
+    toast.onDidDismiss(() => {console.log("Dismissed toast");});
+    toast.present();
+  }
+
 
 }
