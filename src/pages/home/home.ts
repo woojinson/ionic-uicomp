@@ -1,56 +1,54 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {BindPage} from "../bind/bind";
+import {ComponentPage} from "../component/component";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  userName:any;//변수 선언 : 타입스크립트
   items = [
-    {"id":1, name:"Comment"},
-    {"id":2, name:"두번째 Item"},
-    {"id":3, name:"세번째 Item"},
+    {"id":1,"name":"Component"},
+    {"id":2,"name":"두번째 Item"},
+    {"id":3,"name":"세번째 Item"},
   ];
 
-  disableSwitch=false;
+  disabledSwitch=false;
 
-  itemSelected(item){
-    alert(item.id);
+  userName:any;
+
+  constructor(public navCtrl: NavController) {
+    //this.userName = "아이오닉";
+  }
+
+  //event handler 메서드
+  itemSelected(item) {
     if(item.id === 1) {
-      this.navCtrl.push('componentPage')
+      this.navCtrl.push("ComponentPage");
     }
   }
 
-  myButton(event){
-    alert('componentPage 을 입력하세요.userName = '+this.userName);
+  myButton(event) {
     if(typeof this.userName !== "undefined"){
-      //alert(event.target.textContent)
-      console.log(event.target.textContent + ","+ event.clientX + ","+event.clientY);
-      this.navCtrl.push('BindPage', {name:this.userName});
-    }else{
-      alert('userName 을 입력하세요.');
+      console.log(event.target.textContent + " " + event.clientX + "," +
+      event.clientY);
+      this.navCtrl.push("BindPage",{name:this.userName});
+    }else {
+      //입력값이 없는 경우
+      alert("userName 입력하세요!");
     }
-
   }
 
-  constructor(public navCtrl: NavController) {//생성자 = 객체 생성시 잴 먼져 호출됨
-    this.userName = "아이오닉";//값을 할 당
-  }
-
-  ionViewDidLoad(){
-    alert('ionViewDidLoad 을 call.');
-
+  ionViewDidLoad() {
+    console.log("1.HomePage ionViewDidLoad() 호출");
   }
 
   ionViewWillEnter() {
-    alert('ionViewWillEnter 을 call.');
-
+    console.log("2.HomePage ionViewWillEnter() 호출");
   }
 
   ionViewWillUnload() {
-    alert('ionViewWillUnload 을 call.');
-
+    console.log("3.HomePage ionViewWillUnload() 호출");
   }
 }

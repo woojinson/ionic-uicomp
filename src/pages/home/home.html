@@ -7,24 +7,24 @@
 </ion-header>
 
 <ion-content padding>
- <h1>환영합니다. 아이오닉 IONIC!!</h1>
-<!--<H2>userName = {{userName}}</H2>-->
+  <h1>환영합니다. IONIC !!</h1>
   <ion-list>
-    <ion-item *ngFor="let item of items" (click)="itemSelected(item)">{{item.name}}</ion-item>
+    <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        {{item.name}}
+    </ion-item>
   </ion-list>
 
   <ion-list>
     <ion-item>
-      <ion-label>사용자 이름:</ion-label>
+      <ion-label>사용자이름:</ion-label>
       <ion-input type="text" [(ngModel)]="userName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>입력한 값 출력:</ion-label>
+      <ion-label>입력한 값 출력</ion-label>
       <ion-label>{{userName}}</ion-label>
     </ion-item>
   </ion-list>
 
-  <!--<button ion-button full (click)="myButton($event)">내 버튼</button>-->
-  <button ion-button full [disabled]="disableSwitch"
-          (click)="myButton($event)">내 버튼</button>
+  <button ion-button full [disabled]="disabledSwitch"
+          (click)="myButton($event)">MyButton</button>
 </ion-content>
