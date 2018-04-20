@@ -34,9 +34,9 @@ export class NavPage {
       to: account.email,
       subject: 'To : '+account.name,
       body: '',
+      isHtml:true
 
-
-    }
+    };
     this.emailComposer.open(email);
   }
 
